@@ -1,7 +1,8 @@
 // listen for submit event
 function watchSubmit() {
   $('#js-shopping-list-form').submit(event => {
-    event.preventDefualt();
+    event.preventDefault();
+    
     const listItem = $('#shopping-list-entry').val();
 
     $('.shopping-list').append(`
@@ -25,3 +26,5 @@ function watchSubmit() {
 // check and uncheck items in shopping list
 
 // delete items in shopping list
+
+$(watchSubmit);
