@@ -26,11 +26,16 @@ function itemToggle() {
   });
 }
 
-
+function itemDelete() {
+  $('.shopping-list').on('click', '.shopping-item-delete', function(event) {
+    $(this).closest('li').remove();
+  })
+}
 
 function renderShoppingApp() {
   watchSubmit();
   itemToggle();
+  itemDelete();
 }
 
 $(renderShoppingApp);
