@@ -1,4 +1,3 @@
-// listen for submit event
 function watchSubmit() {
   $('#js-shopping-list-form').submit(event => {
     event.preventDefault();
@@ -21,10 +20,17 @@ function watchSubmit() {
   });
 }
 
-// add item to shopping list
+function itemToggle() {
+  $('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
+    $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
+  });
+}
 
-// check and uncheck items in shopping list
 
-// delete items in shopping list
 
-$(watchSubmit);
+function renderShoppingApp() {
+  watchSubmit();
+  itemToggle();
+}
+
+$(renderShoppingApp);
